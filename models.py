@@ -1,4 +1,6 @@
 import hashlib
+import uuid
+from datetime import datetime
 
 class User:
     def __init__(self, username, password, security_question, security_answer):
@@ -26,3 +28,14 @@ class User:
 
     def verify_security_answer(self, answer):
         return self._hash(answer) == self.security_answer_hash
+
+class Task:
+    def __init__(self, title, description, due_date, category="general"):
+        self.title = title
+        self.description = description
+        self.due_date = due_date
+        self.category = category
+        self.task_id = str(uuid.uuid4())
+        self.is_completed = False
+        self.created_at = datetime.now().isoformat
+        self.completed_at = None
