@@ -29,3 +29,13 @@ def save_data(username,data):
     with open(file_path, "w") as file:
         json.dump(data,file, indent=4)
 
+def load_data(username):
+    """
+    Load user data from JSON file
+    Returns the dictionary or None if the file doesnt exist
+    """
+    file_path = get_file_path(username)
+    if not os.path.exists(file_path):
+        return None
+    with open(file_path, "r") as file:
+        return json.load(file)
