@@ -1,6 +1,6 @@
 <div align="center">
 
-# DocTerminal
+# docterminal
 ##### July 2026 - Present
 
 </div>
